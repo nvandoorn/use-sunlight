@@ -4,14 +4,14 @@ import colormap from 'colormap'
 
 const mainRange = colormap({
   colormap: 'autumn',
-  nshades: 10,
+  nshades: 11,
   format: 'hex',
   alpha: 1
 })
 
 const backgroundRange = colormap({
   colormap: 'winter',
-  nshades: 10,
+  nshades: 11,
   format: 'hex',
   alpha: 1
 })
