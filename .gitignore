@@ -11,4 +11,4 @@ netlify.toml
 /.idea
 /.vscode
 
-./storybook-static
+/storybook-static
