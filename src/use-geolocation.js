@@ -15,7 +15,7 @@ export const useGeolocation = () => {
     timestamp: Date.now()
   })
   let mounted = true
-  let watchId: any
+  let watchId
 
   const onEvent = event => {
     if (mounted) {
