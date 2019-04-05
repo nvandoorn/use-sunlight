@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import { useGeolocation as globalUseGeolocation } from './use-geolocation'
 import { useInterval } from './use-interval'
+// TODO roll something smaller since
+// this package likely contains tons
+// of code we dont need
 import suncalc from 'suncalc'
 
 export const computeLightLevel = (
   { loading, latitude, longitude },
   date = new Date()
 ) => {
+  // assume darkness if info is not ready/available
   if (loading || !latitude || !longitude) return 0
   let { altitude } = suncalc.getPosition(date, latitude, longitude)
   if (altitude < 0) {
@@ -23,10 +27,11 @@ export const computeLightLevel = (
 // make a location hook injectable such that we can test this
 export const useSunlight = (useGeolocation = globalUseGeolocation) => {
   const geoLocation = useGeolocation()
+  const getLightLevel = () => computeLightLevel(geoLocation)
 
-  const [lightLevel, setLightLevel] = useState(computeLightLevel(geoLocation))
+  const [lightLevel, setLightLevel] = useState(getLightLevel())
   useInterval(() => {
-    setLightLevel(computeLightLevel(geoLocation))
+    setLightLevel(getLightLevel())
   }, 1000)
   return [lightLevel]
 }
