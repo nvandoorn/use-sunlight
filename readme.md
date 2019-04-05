@@ -19,3 +19,8 @@ export const DemoComponent = ({ children }) => {
   return <div style={style}>{children}</div>
 }
 ```
+
+## Bugs
+
+1. According to tests, solar "height" seems to max out at `7`. This means the solar altitude never reaches `PI/2`.
+1. Bundle size is too large. This is likely from the `suncalc` dependency.
