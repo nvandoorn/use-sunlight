@@ -2,7 +2,7 @@
   "name": "useSunlight",
   "version": "1.0.0",
   "description": "Hook into the level of sunlight",
-  "main": "./dist useLocation.js",
+  "main": "./src/use-sunlight.js",
   "author": "Nicholas Van Doorn",
   "license": "MIT",
   "dependencies": {
