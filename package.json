@@ -1,6 +1,6 @@
 {
-  "name": "useSunlight",
-  "version": "1.0.0",
+  "name": "use-sunlight",
+  "version": "1.0.1",
   "description": "Hook into the level of sunlight",
   "main": "./src/use-sunlight.js",
   "author": "Nicholas Van Doorn",
